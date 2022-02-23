@@ -5,6 +5,7 @@ import ru.digitalleague.calculator.Operator;
 import ru.digitalleague.forms.Circle;
 import ru.digitalleague.forms.Drawing;
 import ru.digitalleague.forms.Rectangle;
+import ru.digitalleague.people.Person;
 
 import java.util.Random;
 
@@ -12,6 +13,8 @@ public class ExampleOverloading {
 
     public static void main(String[] args) {
         exampleOverloading();
+        exampleStaticOverloading();
+        exampleConstructorOverloading();
     }
 
     private static void exampleOverloading() {
@@ -43,5 +46,12 @@ public class ExampleOverloading {
 
         System.out.println("Draw rectangle:");
         Drawing.draw(rectangle);
+    }
+
+    private static void exampleConstructorOverloading() {
+        Person alex = new Person("Alex Mihailov");
+        Person viktor = new Person("Viktor", "Kravtsov");
+        System.out.println(alex.say());
+        System.out.println(viktor.say());
     }
 }
